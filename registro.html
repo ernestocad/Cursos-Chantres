@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro</title>
+
+  <!-- Bootstrap 5.3.3 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- SDK MercadoPago.js -->
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <style>
+    /* Para el efecto del boton pagar */
+    .spinner-rotate {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .contenedor-carrito {
+      max-width: 1000px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .formulario-comprador input,
+    .formulario-comprador select {
+      margin-bottom: 15px;
+    }
+
+    .btn-pagar {
+      background-color: #198754;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .btn-pagar:hover {
+      background-color: #157347;
+    }
+  </style>
+</head>
+<body class="hold-transition login-page">
+  <div class="contenedor-carrito">
+
+    <a href="../cursos.html" class="btn btn-outline-secondary">
+      <i class="fa-solid fa-arrow-left"></i> Seguir comprando
+    </a>
+
+
+    <!-- Formulario del cliente -->
+    <!-- <form id="FrmRegistro" method="post"> -->
+      <br><br>
+    <form id="formCliente" class="formulario-comprador">
+      <h5 class="mb-3">Datos generales</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="TxtNombre" name="nombre" placeholder="Nombre(s)" required>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="TxtApellido" name="apellidos" placeholder="Apellidos" required>
+        </div>
+        <div class="col-md-6">
+          <input type="tel" class="form-control" id="TxtTelefono" name="telefono" placeholder="Teléfono" required>
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" id="TxtEmail" name="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="CmbPais" name="pais" required>
+            <option value="">Selecciona tu país</option>
+            <option value="México">México</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Perú">Perú</option>
+            <!-- Más países -->
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="CmbEstado" name="estado" required>
+            <option value="">Selecciona tu estado</option>
+            <option value="México">México</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-pagar btn-lg" id="btnPagar"><i class="fa-solid fa-credit-card"></i> Iniciar pago</button>
+      </div>
+    </form>
+  </div>
+
+
+
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<!-- <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Bootstrap 5.3.3 JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="js/registro.js"></script>
+</body>
+</html>
